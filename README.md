@@ -61,6 +61,7 @@ aws-linux-ops-practice
 <p align="center">
     <img width="1448" height="910" alt="AWS Linux 운영 자동화 및 장애 대응 흐름도" src="https://github.com/user-attachments/assets/040d879f-75d5-4a15-bbbe-0e5fd6ba1cc0" />
 </p>
+
 ```text
 사용자 요청
     ↓
