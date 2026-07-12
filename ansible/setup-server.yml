@@ -1,0 +1,58 @@
+---
+- name: Setup Linux web servers
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Install nginx
+      dnf:
+        name: nginx
+        state: present
+
+    - name: Start and enable nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Create web page for each server
+      copy:
+        dest: /usr/share/nginx/html/index.html
+        content: |
+          <html>
+          <head>
+            <title>AWS Linux Ops Practice</title>
+          </head>
+          <body>
+            <h1>{{ inventory_hostname }}</h1>
+            <p>Nginx is running on {{ ansible_host }}</p>
+            <p>Configured by Ansible Playbook</p>
+          </body>
+          </html>
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Create ops directory
+      file:
+        path: /opt/ops
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Copy server check script
+      copy:
+        src: ../scripts/server_check.sh
+        dest: /opt/ops/server_check.sh
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Run server check script
+      command: /opt/ops/server_check.sh
+      register: check_result
+
+    - name: Show server check result
+      debug:
+        var: check_result.stdout_lines
