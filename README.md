@@ -325,7 +325,7 @@ Condition: UnHealthyHostCount >= 1
 ---
 
 <p align="center">
-  <img width="1619" height="608" alt="장애- 경보상태" src="https://github.com/user-attachments/assets/d0918653-6eb8-49e3-a787-c764d7c8b174" />
+  <img src="https://github.com/user-attachments/assets/d0918653-6eb8-49e3-a787-c764d7c8b174" width="850" alt="CloudWatch Alarm 경보 상태 확인 화면" />
 </p>
 
 ## 13. Runbook 작성
