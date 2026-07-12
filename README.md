@@ -322,11 +322,11 @@ Condition: UnHealthyHostCount >= 1
 
 복구 후 Nginx 상태와 Target Group 상태가 정상으로 돌아오는 것을 확인했습니다.
 
----
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d0918653-6eb8-49e3-a787-c764d7c8b174" width="850" alt="CloudWatch Alarm 경보 상태 확인 화면" />
 </p>
+
+---
 
 ## 13. Runbook 작성
 
